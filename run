@@ -1,0 +1,24 @@
+#!/bin/bash
+# HW2 reference solution.
+
+set -eou pipefail
+
+readonly NEWS=news.txt
+
+download() {
+    curl --silent \
+        https://data.statmt.org/news-crawl/en/news.2007.en.shuffled.deduped.gz \
+        | gunzip -c \
+        > "${NEWS}"
+}
+
+split() {
+    ./split.py --seed 11215 "${NEWS}" train.txt dev.txt test.txt
+}
+
+main() {
+    download
+    split
+}
+
+main
