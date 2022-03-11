@@ -13,7 +13,7 @@ download() {
 }
 
 split() {
-    ./split.py --seed 11215 "${NEWS}" train.txt dev.txt test.txt
+    ./split.py "${NEWS}" train.txt dev.txt test.txt
 }
 
 main() {
