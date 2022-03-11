@@ -23,7 +23,6 @@ def main(args: argparse.Namespace) -> None:
             print(line, file=sink)
 
 
-
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("input", help="path to input file")
